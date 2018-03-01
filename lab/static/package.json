@@ -98,10 +98,11 @@
         "@deathbeds/jyve-typescript-unsafe-extension": "file:../extensions/deathbeds-jyve-typescript-unsafe-extension-0.3.1-96aa7eb24867fb44c85db0b0864914a27c00bf1a.tgz",
         "@deathbeds/jyve-js-unsafe-extension": "file:../extensions/deathbeds-jyve-js-unsafe-extension-0.3.1-ac65ac1adca369538858dfd65678405ec07b18ff.tgz",
         "@deathbeds/jyve-brython-unsafe-extension": "file:../extensions/deathbeds-jyve-brython-unsafe-extension-0.3.1-a7d1067c8e62900609106abc09a207007860059b.tgz",
-        "@deathbeds/jyve-lyb-phosphor": "file:../extensions/deathbeds-jyve-lyb-phosphor-0.3.1-f50d169059c511a1217cd3c081b3aedf332f7b79.tgz",
+        "@deathbeds/jyve-lyb-phosphor": "file:../extensions/deathbeds-jyve-lyb-phosphor-0.3.1-07488754621e18e48d851dffa6b52e404ab559a0.tgz",
+        "@deathbeds/jyve-lyb-d3": "file:../extensions/deathbeds-jyve-lyb-d3-0.3.1-6c1e456758a7909f77966d2f6a411a9a4bc391dc.tgz",
         "@deathbeds/jyve-extension": "file:../extensions/deathbeds-jyve-extension-0.3.1-3b91ee4a2e0cfdec50e3c1adf29053fd848d605e.tgz",
         "@deathbeds/jyve-coffee-unsafe": "file:linked_packages/deathbeds-jyve-coffee-unsafe-0.3.1-13ed2980fcf6e7895b7b64a6846f23910591e1ff.tgz",
-        "@deathbeds/jyve": "file:linked_packages/deathbeds-jyve-0.3.1-4fe1332d0960f47f17687b6d63a0cf074e0f8150.tgz",
+        "@deathbeds/jyve": "file:linked_packages/deathbeds-jyve-0.3.1-6a5af7dc0f97518948911c510a86ffcce5cf18b2.tgz",
         "@deathbeds/jyve-brython-unsafe": "file:linked_packages/deathbeds-jyve-brython-unsafe-0.3.1-f23d0aaa44a950c89c7cca4b56767d4ed1d38e52.tgz",
         "@deathbeds/jyve-js-unsafe": "file:linked_packages/deathbeds-jyve-js-unsafe-0.3.1-0f083c5ea5da5881424c5a1a839e5088f46293d3.tgz",
         "@deathbeds/jyve-typescript-unsafe": "file:linked_packages/deathbeds-jyve-typescript-unsafe-0.3.1-2a0b4a77b020df345b1c25e7855ba4db338c3524.tgz"
@@ -160,6 +161,7 @@
             "@deathbeds/jyve-js-unsafe-extension": "",
             "@deathbeds/jyve-brython-unsafe-extension": "",
             "@deathbeds/jyve-lyb-phosphor": "",
+            "@deathbeds/jyve-lyb-d3": "",
             "@deathbeds/jyve-extension": ""
         },
         "mimeExtensions": {
@@ -226,6 +228,7 @@
             "@deathbeds/jyve-coffee-unsafe-extension": "/home/weg/Documents/projects/deathbeds/jyve/packages/ext/coffee",
             "@deathbeds/jyve-typescript-unsafe-extension": "/home/weg/Documents/projects/deathbeds/jyve/packages/ext/typescript",
             "@deathbeds/jyve-lyb-phosphor": "/home/weg/Documents/projects/deathbeds/jyve/packages/lyb/phosphor",
+            "@deathbeds/jyve-lyb-d3": "/home/weg/Documents/projects/deathbeds/jyve/packages/lyb/d3",
             "@deathbeds/jyve-coffee-unsafe": "/home/weg/Documents/projects/deathbeds/jyve/packages/api/coffee",
             "@deathbeds/jyve": "/home/weg/Documents/projects/deathbeds/jyve/packages/api/_core",
             "@deathbeds/jyve-brython-unsafe": "/home/weg/Documents/projects/deathbeds/jyve/packages/api/brython",
