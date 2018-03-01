@@ -1,0 +1,12 @@
+*.bundle.*
+lib/
+node_modules/
+*.egg-info/
+.ipynb_checkpoints
+_notebooks/
+.htpasswd
+htpasswd
+*.log
+verdaccio/packages/
+_scripts/
+__pycache__
