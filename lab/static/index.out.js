@@ -1193,118 +1193,10 @@ function main() {
       deferred.matches.push('');
       ignorePlugins.push('');
     }
-    if (isDisabled('@deathbeds/jyve-extension')) {
-      disabled.matches.push('@deathbeds/jyve-extension');
-    } else {
-      module = require('@deathbeds/jyve-extension/');
-      extension = module.default;
-
-      // Handle CommonJS exports.
-      if (!module.hasOwnProperty('__esModule')) {
-        extension = module;
-      }
-
-      if (Array.isArray(extension)) {
-        extension.forEach(function(plugin) {
-          if (isDeferred(plugin.id)) {
-            deferred.matches.push(plugin.id);
-            ignorePlugins.push(plugin.id);
-          }
-          if (isDisabled(plugin.id)) {
-            disabled.matches.push(plugin.id);
-            return;
-          }
-          register.push(plugin);
-        });
-      } else {
-        register.push(extension);
-      }
-    }
-  } catch (e) {
-    console.error(e);
-  }
-  // eslint-disable-next-line semi
-  try {
-    if (isDeferred('')) {
-      deferred.matches.push('');
-      ignorePlugins.push('');
-    }
     if (isDisabled('@deathbeds/jyve-js-unsafe-extension')) {
       disabled.matches.push('@deathbeds/jyve-js-unsafe-extension');
     } else {
       module = require('@deathbeds/jyve-js-unsafe-extension/');
-      extension = module.default;
-
-      // Handle CommonJS exports.
-      if (!module.hasOwnProperty('__esModule')) {
-        extension = module;
-      }
-
-      if (Array.isArray(extension)) {
-        extension.forEach(function(plugin) {
-          if (isDeferred(plugin.id)) {
-            deferred.matches.push(plugin.id);
-            ignorePlugins.push(plugin.id);
-          }
-          if (isDisabled(plugin.id)) {
-            disabled.matches.push(plugin.id);
-            return;
-          }
-          register.push(plugin);
-        });
-      } else {
-        register.push(extension);
-      }
-    }
-  } catch (e) {
-    console.error(e);
-  }
-  // eslint-disable-next-line semi
-  try {
-    if (isDeferred('')) {
-      deferred.matches.push('');
-      ignorePlugins.push('');
-    }
-    if (isDisabled('@deathbeds/jyve-typescript-unsafe-extension')) {
-      disabled.matches.push('@deathbeds/jyve-typescript-unsafe-extension');
-    } else {
-      module = require('@deathbeds/jyve-typescript-unsafe-extension/');
-      extension = module.default;
-
-      // Handle CommonJS exports.
-      if (!module.hasOwnProperty('__esModule')) {
-        extension = module;
-      }
-
-      if (Array.isArray(extension)) {
-        extension.forEach(function(plugin) {
-          if (isDeferred(plugin.id)) {
-            deferred.matches.push(plugin.id);
-            ignorePlugins.push(plugin.id);
-          }
-          if (isDisabled(plugin.id)) {
-            disabled.matches.push(plugin.id);
-            return;
-          }
-          register.push(plugin);
-        });
-      } else {
-        register.push(extension);
-      }
-    }
-  } catch (e) {
-    console.error(e);
-  }
-  // eslint-disable-next-line semi
-  try {
-    if (isDeferred('')) {
-      deferred.matches.push('');
-      ignorePlugins.push('');
-    }
-    if (isDisabled('@deathbeds/jyve-coffee-unsafe-extension')) {
-      disabled.matches.push('@deathbeds/jyve-coffee-unsafe-extension');
-    } else {
-      module = require('@deathbeds/jyve-coffee-unsafe-extension/');
       extension = module.default;
 
       // Handle CommonJS exports.
@@ -1409,10 +1301,118 @@ function main() {
       deferred.matches.push('');
       ignorePlugins.push('');
     }
+    if (isDisabled('@deathbeds/jyve-coffee-unsafe-extension')) {
+      disabled.matches.push('@deathbeds/jyve-coffee-unsafe-extension');
+    } else {
+      module = require('@deathbeds/jyve-coffee-unsafe-extension/');
+      extension = module.default;
+
+      // Handle CommonJS exports.
+      if (!module.hasOwnProperty('__esModule')) {
+        extension = module;
+      }
+
+      if (Array.isArray(extension)) {
+        extension.forEach(function(plugin) {
+          if (isDeferred(plugin.id)) {
+            deferred.matches.push(plugin.id);
+            ignorePlugins.push(plugin.id);
+          }
+          if (isDisabled(plugin.id)) {
+            disabled.matches.push(plugin.id);
+            return;
+          }
+          register.push(plugin);
+        });
+      } else {
+        register.push(extension);
+      }
+    }
+  } catch (e) {
+    console.error(e);
+  }
+  // eslint-disable-next-line semi
+  try {
+    if (isDeferred('')) {
+      deferred.matches.push('');
+      ignorePlugins.push('');
+    }
     if (isDisabled('@deathbeds/jyve-p5-unsafe-extension')) {
       disabled.matches.push('@deathbeds/jyve-p5-unsafe-extension');
     } else {
       module = require('@deathbeds/jyve-p5-unsafe-extension/');
+      extension = module.default;
+
+      // Handle CommonJS exports.
+      if (!module.hasOwnProperty('__esModule')) {
+        extension = module;
+      }
+
+      if (Array.isArray(extension)) {
+        extension.forEach(function(plugin) {
+          if (isDeferred(plugin.id)) {
+            deferred.matches.push(plugin.id);
+            ignorePlugins.push(plugin.id);
+          }
+          if (isDisabled(plugin.id)) {
+            disabled.matches.push(plugin.id);
+            return;
+          }
+          register.push(plugin);
+        });
+      } else {
+        register.push(extension);
+      }
+    }
+  } catch (e) {
+    console.error(e);
+  }
+  // eslint-disable-next-line semi
+  try {
+    if (isDeferred('')) {
+      deferred.matches.push('');
+      ignorePlugins.push('');
+    }
+    if (isDisabled('@deathbeds/jyve-extension')) {
+      disabled.matches.push('@deathbeds/jyve-extension');
+    } else {
+      module = require('@deathbeds/jyve-extension/');
+      extension = module.default;
+
+      // Handle CommonJS exports.
+      if (!module.hasOwnProperty('__esModule')) {
+        extension = module;
+      }
+
+      if (Array.isArray(extension)) {
+        extension.forEach(function(plugin) {
+          if (isDeferred(plugin.id)) {
+            deferred.matches.push(plugin.id);
+            ignorePlugins.push(plugin.id);
+          }
+          if (isDisabled(plugin.id)) {
+            disabled.matches.push(plugin.id);
+            return;
+          }
+          register.push(plugin);
+        });
+      } else {
+        register.push(extension);
+      }
+    }
+  } catch (e) {
+    console.error(e);
+  }
+  // eslint-disable-next-line semi
+  try {
+    if (isDeferred('')) {
+      deferred.matches.push('');
+      ignorePlugins.push('');
+    }
+    if (isDisabled('@deathbeds/jyve-typescript-unsafe-extension')) {
+      disabled.matches.push('@deathbeds/jyve-typescript-unsafe-extension');
+    } else {
+      module = require('@deathbeds/jyve-typescript-unsafe-extension/');
       extension = module.default;
 
       // Handle CommonJS exports.
