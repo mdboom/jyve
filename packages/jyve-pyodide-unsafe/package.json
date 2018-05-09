@@ -21,15 +21,11 @@
       }
     ],
     "kernelspec": {
-      "arvg": [
-        "echo",
-        "jyve"
-      ],
+      "arvg": ["echo", "jyve"],
       "display_name": "Pyodide (unsafe) — Jyve",
       "language": "python",
       "name": "jyve-pyodide-unsafe",
-      "resources": {
-      }
+      "resources": {}
     },
     "language_info": {
       "codemirror_mode": {
@@ -44,11 +40,11 @@
       "version": "ES2015"
     }
   },
-  "keywords": [
-    "jupyter",
-    "jupyterlab",
-    "jyve"
-  ],
+  "pyodide": {
+    "baseURL":
+      "https://cdn.rawgit.com/iodide-project/pyodide-demo/e596fa22e506c72691d965e288c178c904d5a1e1"
+  },
+  "keywords": ["jupyter", "jupyterlab", "jyve"],
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
   "name": "@deathbeds/jyve-pyodide-unsafe",
