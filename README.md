@@ -1,26 +1,37 @@
 # jyve
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deathbeds/jyve/master?urlpath=lab/tree/index.ipynb)
+[![Build Status][travis-badge]][travis] [![Binder][binder-badge]][binder] [![npm-version][]][npm-search]
 
-Experimental, unsafe Jupyter Kernels in the Browser... from anywhere.
+Experimental, unsafe Jupyter Kernels in the Browser... from anywhere. Try the [demo][].
+
+[demo]: https://deathbeds.github.io/jyve
+[travis]: https://travis-ci.org/deathbeds/jyve
+[travis-badge]: https://travis-ci.org/deathbeds/jyve.svg?branch=master
+[binder]: https://mybinder.org/v2/gh/deathbeds/jyve/master?urlpath=lab/tree/index.ipynb
+[binder-badge]: https://mybinder.org/badge.svg
+[npm-version]: https://badge.fury.io/js/%40deathbeds%2Fjyve.svg
+[npm-search]: https://www.npmjs.com/search?q=jyve%20keywords%3Ajupyterlab-extension
 
 ## IFrame-backed kernels
-- [JS](./notebooks/JavaScript.ipynb)
-- [CoffeeScript](./notebooks/CoffeeScript.ipynb)
-- [Brython](./notebooks/Brython.ipynb)
-- [TypeScript](./notebooks/TypeScript.ipynb)
-- [P5](./notebooks/P5.ipynb)
-- [Pyodide](./notebooks/Pyodide.ipynb)
+
+* [JS](./notebooks/JS.ipynb)
+* [CoffeeScript](./notebooks/CoffeeScript.ipynb)
+* [Brython](./notebooks/Brython.ipynb)
+* [TypeScript](./notebooks/TypeScript.ipynb)
+* [P5](./notebooks/P5.ipynb)
+* [Pyodide](./notebooks/Pyodide.ipynb)
 
 ## Convenience wrappers
-- [PhosphorJS](./notebooks/Phosphor Playground.ipynb)
-- [d3](./notebooks/d3 Playground.ipynb)
+
+* [PhosphorJS](./notebooks/Phosphor Playground.ipynb)
+* [d3](./notebooks/d3 Playground.ipynb)
 
 These kernels create their own widget next to a
 Notebook (or Console). Restarting the kernel is equivalent to refreshing the
 page.
 
 ## The Big Security Hole
+
 For **extra danger**, these kernels also make the root `JupyterLab` application
 instance available. In particular, this allows you to do things like:
 
@@ -31,13 +42,15 @@ JupyterLab.commands.execute('notebook:create-new');
 ...to create a new notebook, though you can do
 [just about anything](./notebooks/JupyterLab API.ipynb).
 
-
 ## Before
+
 Install:
+
 * JupyterLab >=0.31.10 from [pip](https://pypi.io/project/jupyterlab) or
   [conda](https://anaconda.org/conda-forge/jupyterlab)
 
 ## Install
+
 ```bash
 # the core manager, required but doesn't do anything by itself
 jupyter labextension install @deathbeds/jyve-extension
@@ -55,6 +68,7 @@ jupyter labextension install @deathbeds/jyve-lyb-phosphor
 ```
 
 Or, since hey, **this is Jyve**:
+
 ```bash
 jupyter labextension install \
   @deathbeds/jyve-brython-unsafe-extension \
@@ -69,8 +83,8 @@ jupyter labextension install \
   && jupyter labextension list
 ```
 
-
 ## Motivation
+
 JupyterLab currently **disables execution of arbitrary JavaScript** in output
 cells, Markdown documents and other places. This is a Good Thing,
 and will help keep safe people who are primarily interested in learning and
@@ -89,28 +103,32 @@ itself.
 **Jyve** fits somewhere between the two. A Jyve **Kyrnel** runs in JupyterLab
 and has **full, unsafe access** to the full capability of your browser,
 including:
-- its own dedicated DOM in an `iframe`
-- the JupyterLab `Application` instance, including
-  - commands
-  - the application shell
-  - so much more...
+
+* its own dedicated DOM in an `iframe`
+* the JupyterLab `Application` instance, including
+  * commands
+  * the application shell
+  * so much more...
 
 Because it's _almost_ a real Jupyter Kernel, a Jyve Kyrnel can be used by tools
 like the JupyterLab Notebook and the JupyterLab Console. But, because of its
 relationship to JupyterLab and the browser, it can:
-- load arbitrary code and data from anywhere on the internet
-- integrate with the excellent local browser debugger tools
-- run JupyterLab commands
-- add new phosphor Widgets to the application shell
+
+* load arbitrary code and data from anywhere on the internet
+* integrate with the excellent local browser debugger tools
+* run JupyterLab commands
+* add new phosphor Widgets to the application shell
 
 ## Development
 
 ### Before
-Install:
-- [conda](https://conda.io/docs/user-guide/install/download.html)
 
+Install:
+
+* [conda](https://conda.io/docs/user-guide/install/download.html)
 
 ### Setup
+
 ```bash
 conda env update
 source activate jyve-dev
@@ -118,12 +136,14 @@ source activate jyve-dev
 ```
 
 ## Build Once
+
 ```bash
 jlpm build
 jlpm lab:build
 ```
 
 ## Always Be Building
+
 ```bash
 jlpm watch
 # and in another terminal
