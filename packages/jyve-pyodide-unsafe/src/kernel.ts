@@ -3,12 +3,14 @@ import {Kernel, KernelMessage} from '@jupyterlab/services';
 import {JSUnsafeKernel} from '@deathbeds/jyve-js-unsafe';
 import {JyveKernel} from '@deathbeds/jyve/lib/kernel';
 
-const {jyve} = (require('../package.json') as any);
+// tslint:disable-next-line
+const {jyve, pyodide} = require('../package.json') as any;
+console.log(pyodide);
+
 
 export const kernelSpec: Kernel.ISpecModel = jyve.kernelspec;
 
 // const DEBUG = false;
-
 
 export class PyodideUnsafeKernel extends JSUnsafeKernel {
   protected kernelSpec = kernelSpec;
@@ -20,7 +22,7 @@ export class PyodideUnsafeKernel extends JSUnsafeKernel {
       ...jsInfo,
       help_links: [...jsInfo.help_links, ...jyve.help_links],
       implementation: kernelSpec.name,
-      language_info: jyve.language_info
+      language_info: jyve.language_info,
     };
   }
 
@@ -52,15 +54,19 @@ export class PyodideUnsafeKernel extends JSUnsafeKernel {
     };
 
     pyodide.write = (data: any) => {
-        k.sendJSON(k.fakeDisplayData(parent, {
-            'text/plain': `${data}`}));
+      k.sendJSON(
+        k.fakeDisplayData(parent, {
+          'text/plain': `${data}`,
+        })
+      );
     };
 
     pyodide.runPython(
-        "from js import window as _window\n" +
-        "import sys\n" +
-        "sys.stdout.write = _window.pyodide.write\n" +
-        "sys.stderr.write = _window.pyodide.write\n");
+      'from js import window as _window\n' +
+        'import sys\n' +
+        'sys.stdout.write = _window.pyodide.write\n' +
+        'sys.stderr.write = _window.pyodide.write\n'
+    );
 
     return execNS;
   }
@@ -74,24 +80,25 @@ export class PyodideUnsafeKernel extends JSUnsafeKernel {
 }
 
 function bootstrap_pyodide(window: any) {
-  let baseURL = "http://iodide-project.github.io/pyodide-demo/";
-  let wasmURL = "https://cdn.rawgit.com/iodide-project/pyodide-demo/a39e3f3e80a438a07e6a8028fa4745768c16cbc2/pyodide.asm.wasm";
+  let wasmURL = `${pyodide.baseURL}pyodide.asm.wasm`;
   let wasmXHR = new XMLHttpRequest();
   wasmXHR.open('GET', wasmURL, true);
   wasmXHR.responseType = 'arraybuffer';
   wasmXHR.onload = function() {
+    // tslint:disable-next-line
     let Module: any = {};
 
     if (wasmXHR.status === 200 || wasmXHR.status === 0) {
       Module.wasmBinary = wasmXHR.response;
     } else {
       console.warn(
-        `Couldn't download the pyodide.asm.wasm binary.  Response was ${wasmXHR.status}`);
+        `Couldn't download the pyodide.asm.wasm binary.  Response was ${wasmXHR.status}`
+      );
     }
 
-    Module.baseURL = baseURL;
+    Module.baseURL = pyodide.baseURL;
     let script = window.document.createElement('script');
-    script.src = `${baseURL}pyodide.asm.js`;
+    script.src = `${pyodide.baseURL}pyodide.asm.js`;
     script.onload = () => {
       window.pyodide = window.pyodide(Module);
       window.pyodide.then = undefined;
@@ -118,7 +125,7 @@ export namespace PyodideUnsafeKernel {
 
     if (count <= 0) {
       // TODO: Is there a way to popup an error modal here?
-      alert("Pyodide failed to load.");
+      alert('Pyodide failed to load.');
     }
 
     let pyodideInstance = window.pyodide;
