@@ -42,7 +42,7 @@
   },
   "pyodide": {
     "baseURL":
-      "https://cdn.rawgit.com/iodide-project/pyodide-demo/e596fa22e506c72691d965e288c178c904d5a1e1"
+      "https://cdn.rawgit.com/iodide-project/pyodide-demo/a39e3f3e80a438a07e6a8028fa4745768c16cbc2/"
   },
   "keywords": ["jupyter", "jupyterlab", "jyve"],
   "license": "BSD-3-Clause",

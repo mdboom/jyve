@@ -5,6 +5,8 @@ import {JyveKernel} from '@deathbeds/jyve/lib/kernel';
 
 // tslint:disable-next-line
 const {jyve, pyodide} = require('../package.json') as any;
+console.log(pyodide);
+
 
 export const kernelSpec: Kernel.ISpecModel = jyve.kernelspec;
 
@@ -78,7 +80,7 @@ export class PyodideUnsafeKernel extends JSUnsafeKernel {
 }
 
 function bootstrap_pyodide(window: any) {
-  let wasmURL = `${pyodide.baseURL}/pyodide.asm.wasm`;
+  let wasmURL = `${pyodide.baseURL}pyodide.asm.wasm`;
   let wasmXHR = new XMLHttpRequest();
   wasmXHR.open('GET', wasmURL, true);
   wasmXHR.responseType = 'arraybuffer';
@@ -96,7 +98,7 @@ function bootstrap_pyodide(window: any) {
 
     Module.baseURL = pyodide.baseURL;
     let script = window.document.createElement('script');
-    script.src = `${pyodide.baseURL}/pyodide.asm.js`;
+    script.src = `${pyodide.baseURL}pyodide.asm.js`;
     script.onload = () => {
       window.pyodide = window.pyodide(Module);
       window.pyodide.then = undefined;
